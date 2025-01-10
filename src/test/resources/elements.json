@@ -1,0 +1,426 @@
+{
+
+
+  "activityPage": {
+    "btn_CustomTitle": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Custom Title']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Custom Title" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ]
+  },
+  "alertDialogPage": {
+    "list_btn":
+      {"type":"className","value":"android.widget.Button" }
+  },
+  "appPage": {
+    "btn_ActionBar": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Action Bar']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Action Bar" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Action Bar" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_Activity": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Activity']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Activity" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Activity" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_Alarm": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Alarm']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Alarm" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Alarm" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_AlertDialogs": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Alert Dialogs']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Alert Dialogs" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Alert Dialogs" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_DeviceAdmin": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Device Admin']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Device Admin" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Device Admin" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_Fragment": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Fragment']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Fragment" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Fragment" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_LauncherShortcuts": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Launcher Shortcuts']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Launcher Shortcuts" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Launcher Shortcuts" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_Loader": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Loader']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Loader" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Loader" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_Menu": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Menu']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Menu" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Menu" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_Notification": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Notification']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Notification" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Notification" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_Search": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Search']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Search" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Search" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_Service": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Service']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Service" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Service" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_TextToSpeech": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Text-To-Speech']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Text-To-Speech" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Text-To-Speech" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_VoiceRecognition": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Voice Recognition']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Voice Recognition" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Voice Recognition" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ]
+  },
+  "contexMenuPage": {
+    "btn_Long_Press_Me": [
+      { "type": "xpath", "value": "//android.widget.Button[@content-desc='Long press me']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Long press me" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/long_press" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Long press me" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-0053-ffff-ffff00000197" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "1" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.Button" }
+    ],
+    "btn_Menu_A": [
+      { "type": "xpath", "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/title" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Menu A" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-0060-ffff-ffff000001b7" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "0" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.TextView" }
+    ],
+    "btn_Menu_B": [
+      { "type": "xpath", "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/title" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Menu B" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-0060-ffff-ffff000001b7" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "0" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.TextView" }
+    ]
+  },
+  "customTitlePage": {
+    "navigatorText_Left": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Left is best']" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/left_text" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Left is best" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "0" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.TextView" }
+    ],
+    "navigatorText_Right": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Right is always right']" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/right_text" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Right is always right" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "1" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.TextView" }
+    ],
+    "text_Left": [
+      { "type": "xpath", "value": "//android.widget.EditText[@content-desc='Left is best']" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/left_text_edit" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Left is best" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "0" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.EditText" }
+    ],
+    "text_Right": [
+      { "type": "xpath", "value": "//android.widget.EditText[@content-desc='Right is always right']" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/right_text_edit" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Right is always right" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "0" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.EditText" }
+    ],
+    "btn_Change_Left": [
+      { "type": "xpath", "value": "//android.widget.Button[@content-desc='Change Left']" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/left_text_button" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Change Left" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "1" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.Button" }
+    ],
+    "btn_Change_Right": [
+      { "type": "xpath", "value": "//android.widget.Button[@content-desc='Change Right']" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/right_text_button" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Change Right" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "1" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.Button" }
+    ]
+  },
+  "fragmentPage":{
+  "btn_Alert_Dialog": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Alert Dialog']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Alert Dialog" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Arguments": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Arguments']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Arguments" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Context_Menu": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Context Menu']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Context Menu" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Custom_Animations": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Custom Animations']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Custom Animations" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Dialog": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Dialog']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Dialog" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Dialog_or_Activity": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Dialog or Activity']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Dialog or Activity" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Hide_and_Show": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Hide and Show']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Hide and Show" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Layout": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Layout']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Layout" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_List_Array": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='List Array']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "List Array" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Menu": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Menu']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Menu" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Nesting_Tabs": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Nesting Tabs']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Nesting Tabs" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Receive_Result": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Receive Result']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Receive Result" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Retain_Instance": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Retain Instance']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Retain Instance" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Stack": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Stack']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Stack" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ],
+  "btn_Tabs": [
+    { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Tabs']" },
+    { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Tabs" },
+    { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+  ]
+},
+  "hideAndShowPage": {
+    "btn_Hide_Frag1": [
+      { "type": "xpath", "value": "(//android.widget.Button[@content-desc='Hide'])[1]" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/frag1hide" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-007a-ffff-ffff00000209" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "0" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.Button" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Hide" }
+    ],
+    "btn_Hide_Frag2": [
+      { "type": "xpath", "value": "(//android.widget.Button[@content-desc='Hide'])[2]" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/frag2hide" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-007a-ffff-ffff0000020e" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "0" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.Button" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Hide" }
+    ],
+    "text_Fragment_1": [
+      { "type": "xpath", "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/fragment1" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-007a-ffff-ffff0000020a" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "1" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.LinearLayout" }
+    ],
+    "text_Fragment_2": [
+      { "type": "xpath", "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/fragment2" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-007a-ffff-ffff0000020f" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "1" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.LinearLayout" }]
+  },
+  "homePage": {
+    "btn_App": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='App']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "App" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "com.example.app:id/btn_App" }
+    ],
+    "btn_Views": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Views']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Views" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Views" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ]
+  },
+  "incomingMessagePage": {
+    "btn_Notify_App": [
+      { "type": "xpath", "value": "//android.widget.Button[@content-desc='Show App Notification']" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/notify_app" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-007e-ffff-ffff0000025d" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "1" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.Button" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Show App Notification" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Show App Notification" }
+    ],
+    "btn_Notify_Interstitial": [
+      { "type": "xpath", "value": "//android.widget.Button[@content-desc='Show Interstitial Notification']" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/notify_interstitial" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-007e-ffff-ffff0000025f" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "3" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.Button" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Show Interstitial Notification" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Show Interstitial Notification" }
+    ]
+  },
+  "notificationBarPage": {
+    "btn_short_text": [
+      { "type": "xpath", "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TextView[2]" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-0074-ffff-ffff000003ef" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "1" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "com.android.systemui" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.TextView" }
+    ],
+    "txt_detail": [
+      { "type": "xpath", "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[2]" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "io.appium.android.apis:id/message" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-008a-ffff-ffff00000329" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "1" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.TextView" }
+    ]
+  },
+  "notificationPage": {
+    "btn_IncomingMessage": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='IncomingMessage']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "IncomingMessage" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_NotifyingServiceController": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Notifying Service Controller']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Notifying Service Controller" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_NotifyWithText": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='NotifyWithText']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "NotifyWithText" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ],
+    "btn_StatusBar": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Status Bar']" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Status Bar" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ]
+  },
+  "scrollablePage": {
+    "scrollBar_tab": [
+      {"type": "id","value": "android:id/tabs"}
+    ],
+    "btn_Tab_30": [
+      { "type": "xpath", "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.TabHost/android.widget.LinearLayout/android.widget.HorizontalScrollView/android.widget.TabWidget/android.widget.LinearLayout[5]/android.widget.TextView" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/title" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "0" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.TextView" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "TAB 30" }
+    ],
+    "btn_Tab_30_Content": [
+      { "type": "xpath", "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.TabHost/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.TextView" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "0" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.TextView" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Content for tab with tag Tab 30" }
+    ]
+
+  },
+  "tabsPage": {
+    "btn_Scrollable": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='5. Scrollable']" },
+      { "type": "attribute", "attributeName": "elementId", "attributeValue": "00000000-0000-000b-ffff-ffff0000003d" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "4" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.TextView" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "5. Scrollable" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "5. Scrollable" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ]
+  },
+  "viewsPage": {
+    "btn_Tabs": [
+      { "type": "xpath", "value": "//android.widget.TextView[@content-desc='Tabs']" },
+      { "type": "attribute", "attributeName": "index", "attributeValue": "7" },
+      { "type": "attribute", "attributeName": "package", "attributeValue": "io.appium.android.apis" },
+      { "type": "attribute", "attributeName": "class", "attributeValue": "android.widget.TextView" },
+      { "type": "attribute", "attributeName": "text", "attributeValue": "Tabs" },
+      { "type": "attribute", "attributeName": "content-desc", "attributeValue": "Tabs" },
+      { "type": "attribute", "attributeName": "resource-id", "attributeValue": "android:id/text1" }
+    ]
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

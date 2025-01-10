@@ -1,0 +1,11 @@
+
+
+<suite name="Cucumber Parallel Suite" verbose="1" >
+    <test name="Parallel:AutomationProject">
+        <classes>
+            <class name="testRunners.runner">
+            </class>
+
+        </classes>
+    </test>
+</suite>
