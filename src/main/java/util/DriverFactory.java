@@ -1,5 +1,6 @@
 package util;
 
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -33,6 +34,7 @@ public class DriverFactory {
                 default:
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
+                    options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
                     // Uncomment if you need headless mode based on environment variable
                     // if ("Y".equalsIgnoreCase(System.getenv("HEADLESS"))) {
                     //     options.addArguments("--headless");

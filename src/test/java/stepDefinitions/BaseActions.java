@@ -5,15 +5,24 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import pages.CalculatorPage;
+
+import java.io.IOException;
+import java.time.Duration;
 
 public class BaseActions {
 
     protected WebDriver driver;
 
     // Constructor to initialize WebDriver
-    public BaseActions(WebDriver driver) {
+    public BaseActions(WebDriver driver) throws IOException {
         this.driver = driver;
     }
+
+    CalculatorPage calculatorPage =new CalculatorPage(driver);
 
     // Click on an element if it is present and visible
     public void click(By locator) {
@@ -73,10 +82,54 @@ public class BaseActions {
     // Check if an element is present and visible on the page
     private boolean isElementPresent(By locator) {
         try {
+            elementWaiter(locator);
             WebElement element = driver.findElement(locator);
             return element.isDisplayed(); // Return true if element is found and visible
         } catch (NoSuchElementException e) {
             return false; // Return false if element is not found
         }
+    }
+    private void elementWaiter(By locator) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+        } catch (NoSuchElementException e) {
+        }
+    }
+    public String virgulToNokta(String input) {
+        return input.replace(",", ".");
+    }
+    ////////////////////////////////////////////////////Hesaap Makinesi//////////////////////
+    public void clcIslemGir(String islem) { // -,+,*,/ işaretleri girilir
+        click(By.xpath("//div[text()='" + islem + "']"));
+    }
+    public void clcAcButonuTıkla() {
+        click(By.xpath("//div[text()='AC']"));
+    }
+
+    public void clcSayiGir(String sayi) {
+        for (int i = 0; i < sayi.length(); i++) {
+            char digit = sayi.charAt(i);
+            if (digit == '.') {
+                click(By.xpath("//div[text()=',']"));
+            } else {
+                click(By.xpath("//div[text()='" + digit + "']"));
+            }
+        }
+    }
+
+    public void clcHesapla(String sayi1, String islem, String sayi2) {
+        clcSayiGir(sayi1);
+        clcIslemGir(islem);
+        clcSayiGir(sayi2);
+        click(By.xpath("//div[text()='=']"));
+    }
+    public Double clcGetSonuc(){
+        return (Double.parseDouble(virgulToNokta(driver.findElement(calculatorPage.getLabelBox()).getText().split(" ")[1])));
+    }
+    //////////////////////////////////////////Assertions////////////
+    public void testCompareDoubles(double actualResult, double expectedResult) {
+        Assert.assertEquals(actualResult,expectedResult,"HATA! sayilar esit degildir");
     }
 }

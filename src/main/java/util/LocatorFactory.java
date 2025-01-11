@@ -2,26 +2,28 @@ package util;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Iterator;
 
 public class LocatorFactory {
 
     private static JsonNode rootNode;
-    static WebDriver driver;
+    static WebDriver driver = DriverFactory.getDriver();
+    static WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
     // Constructor to initialize WebDriver
     public LocatorFactory(WebDriver driver) {
-        this.driver = driver;
-    }
 
+    }
     // Load JSON file and set root node
     static {
         try {
@@ -52,8 +54,10 @@ public class LocatorFactory {
                     if (locator != null && isElementPresent(driver, locator)) {
                         return locator; // Return valid locator
                     }
+
                 }
             }
+
         }
 
         // If no locator is found, throw an exception
@@ -64,14 +68,22 @@ public class LocatorFactory {
     private static By createBy(String type, JsonNode elementNode) {
         switch (type) {
             case "id":
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(elementNode.path("value").asText())));
                 return By.id(elementNode.path("value").asText());
             case "name":
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elementNode.path("value").asText())));
                 return By.name(elementNode.path("value").asText());
+            case "cssSelector":
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(elementNode.path("value").asText())));
+                return By.cssSelector(elementNode.path("value").asText());
             case "xpath":
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elementNode.path("value").asText())));
                 return By.xpath(elementNode.path("value").asText());
             case "placeholder":
-                return By.xpath(String.format("//input[@placeholder='%s']", elementNode.path("value").asText()));
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(String.format("input[placeholder='%s']", elementNode.path("value").asText()))));
+                return By.cssSelector(String.format("input[placeholder='%s']", elementNode.path("value").asText()));
             case "className":
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(elementNode.path("value").asText())));
                 return By.className(elementNode.path("value").asText());
             case "attribute":
                 String attributeName = elementNode.path("attributeName").asText();

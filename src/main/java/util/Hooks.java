@@ -24,7 +24,7 @@ public class Hooks {
             //WebDriverManager.chromedriver().setup();
             //webDriver =new ChromeDriver();
             webDriver = DriverFactory.getDriver();
-            webDriver.manage().window().maximize();
+            //webDriver.manage().window().maximize();
             webDriver.get("https://catchylabs-webclient.testinium.com/");
 
         }

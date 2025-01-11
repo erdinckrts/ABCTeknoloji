@@ -10,11 +10,88 @@
       { "type": "id","value": "" }
     ],
     "loginButton": [
-      { "type": "className","value": ".css-175oi2r" },
+      { "type": "className","value": "css-175oi2r" },
+      { "type": "id","value": "" },
+      { "type": "cssSelector","value": "" }
+    ]
+  },
+  "calculatorPage": {
+    "labelBox": [
+      { "type": "xpath","value": "//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/div/div/div/div[1]/div/span" },
+      { "type": "id","value": "" }
+    ],
+    "sifirButton": [
+      { "type": "xpath","value": "//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/div/div/div/div[2]/div[17]/div/div" },
+      { "type": "id","value": "" }
+    ],
+    "birButton": [
+      { "type": "xpath","value": "//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/div/div/div/div[2]/div[13]/div/div" },
+      { "type": "id","value": "" }
+    ],
+    "ikiButton": [
+      { "type": "xpath","value": "//div[14]" },
+      { "type": "id","value": "" }
+    ],
+    "ucButton": [
+      { "type": "xpath","value": "//div[15]" },
+      { "type": "id","value": "" }
+    ],
+    "dortButton": [
+      { "type": "xpath","value": "//div[9]" },
+      { "type": "id","value": "" }
+    ],
+    "besButton": [
+      { "type": "xpath","value": "//div[10]" },
+      { "type": "id","value": "" }
+    ],
+    "altıButton": [
+      { "type": "xpath","value": "//div[11]" },
+      { "type": "id","value": "" }
+    ],
+    "yediButton": [
+      { "type": "xpath","value": "//div[@class='css-175oi2r r-97e31f r-bv2aro r-hxflta r-10xqauy r-1awozwy r-13awgt0 r-d23pfw r-13qz1uu']//div[5]" },
+      { "type": "id","value": "" }
+    ],
+    "sekizButton": [
+      { "type": "xpath","value": "//div[6]" },
+      { "type": "id","value": "" }
+    ],
+    "dokuzButton": [
+      { "type": "xpath","value": "//div[7]" },
+      { "type": "id","value": "" }
+    ],
+    "virgulButton": [
+      { "type": "xpath","value": "Username" },
+      { "type": "id","value": "" }
+    ],
+    "artıButton": [
+      { "type": "xpath","value": "Username" },
+      { "type": "id","value": "" }
+    ],
+    "eksiButton": [
+      { "type": "xpath","value": "Username" },
+      { "type": "id","value": "" }
+    ],
+    "carpiButton": [
+      { "type": "xpath","value": "Username" },
+      { "type": "id","value": "" }
+    ],
+    "boluButton": [
+      { "type": "xpath","value": "Username" },
+      { "type": "id","value": "" }
+    ],
+    "esittirButton": [
+      { "type": "xpath","value": "Username" },
       { "type": "id","value": "" }
     ]
+
+  },
+  "stagePage": {
+    "openCalculatorButton": [
+      { "type": "xpath","value": "//div[@tabindex='0']//div[@dir='auto']" }
+    ]
   }
-}
+  }
 
 
 
