@@ -13,12 +13,16 @@ import java.io.IOException;
 import java.util.Iterator;
 
 public class LocatorFactory {
+
     private static JsonNode rootNode;
-    static AndroidDriver driver;
+    static WebDriver driver;
 
-    public LocatorFactory(AndroidDriver driver) {this.driver = driver;}
+    // Constructor to initialize WebDriver
+    public LocatorFactory(WebDriver driver) {
+        this.driver = driver;
+    }
 
-    // JSON dosyasını yükler ve kök düğümü alır
+    // Load JSON file and set root node
     static {
         try {
             ObjectMapper mapper = new ObjectMapper();
@@ -28,14 +32,14 @@ public class LocatorFactory {
         }
     }
 
-    // Tüm locatörleri sırayla denemek için getLocator metodunu oluşturur
+    // Get the locator based on the page name and element name
     public static By getLocator(String pageName, String elementName) {
         JsonNode pageNode = rootNode.path(pageName);
 
         if (!pageNode.isMissingNode()) {
             JsonNode elementArray = pageNode.path(elementName);
 
-            // Eğer locatörler bulunduysa, sırayla dene
+            // Try each locator type in order
             if (elementArray.isArray()) {
                 Iterator<JsonNode> elements = elementArray.elements();
 
@@ -44,45 +48,49 @@ public class LocatorFactory {
                     String type = elementNode.path("type").asText();
                     By locator = createBy(type, elementNode);
 
-                    // Locatör geçerli ise, elementi kontrol et
+                    // If the locator is valid and element is present, return it
                     if (locator != null && isElementPresent(driver, locator)) {
-                        return locator; // Geçerli locatörü bulunca döner
+                        return locator; // Return valid locator
                     }
                 }
             }
         }
 
-        // Eğer locatör bulunamazsa hata fırlat
+        // If no locator is found, throw an exception
         throw new RuntimeException("Locator not found or not visible for: " + pageName + " -> " + elementName);
     }
 
-    // Locatör tipine göre uygun By nesnesini oluşturur
+    // Create a By object based on the locator type
     private static By createBy(String type, JsonNode elementNode) {
         switch (type) {
-            case "xpath":
-                return By.xpath(elementNode.path("value").asText());
             case "id":
                 return By.id(elementNode.path("value").asText());
+            case "name":
+                return By.name(elementNode.path("value").asText());
+            case "xpath":
+                return By.xpath(elementNode.path("value").asText());
+            case "placeholder":
+                return By.xpath(String.format("//input[@placeholder='%s']", elementNode.path("value").asText()));
+            case "className":
+                return By.className(elementNode.path("value").asText());
             case "attribute":
                 String attributeName = elementNode.path("attributeName").asText();
                 String attributeValue = elementNode.path("attributeValue").asText();
                 return By.xpath(String.format("//*[@%s='%s']", attributeName, attributeValue));
-            case "className":
-                return By.className(elementNode.path("value").asText());
-            case "name":
-                return By.name(elementNode.path("value").asText());
+            case "aria-label":
+                return By.xpath(String.format("//*[@aria-label='%s']", elementNode.path("value").asText()));
             default:
-                return null; // Bilinmeyen bir locatör tipi durumunda null döner
+                return null; // Return null if the locator type is unknown
         }
     }
 
-    // Elementin sayfada mevcut olup olmadığını kontrol eder
+    // Check if the element is present on the page
     private static boolean isElementPresent(WebDriver driver, By locator) {
         try {
             WebElement element = driver.findElement(locator);
-            return element.isDisplayed(); // Elementi bulursa ve görünürse true döner
+            return element.isDisplayed(); // Return true if element is found and visible
         } catch (NoSuchElementException e) {
-            return false; // Element bulunamazsa false döner
+            return false; // Return false if element is not found
         }
     }
 }

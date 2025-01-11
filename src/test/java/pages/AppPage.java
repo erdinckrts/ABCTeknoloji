@@ -1,11 +1,12 @@
 package pages;
 
 import org.openqa.selenium.By;
-import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.WebDriver;
+
 import java.io.IOException;
 
 public class AppPage extends BasePage{
-    public AppPage(AndroidDriver driver) throws IOException {super(driver);}
+    public AppPage(WebDriver driver) throws IOException {super(driver);}
 
     public By getActionBarButton() {
         return locatorFactory.getLocator("appPage", "btn_ActionBar");

@@ -5,38 +5,51 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+public class DriverFactory {
 
-    public class DriverFactory {
+    // Singleton WebDriver instance
+    private static WebDriver driver;
 
-        // Get a new WebDriver Instance.
-        // There are various implementations for this depending on browser. The required browser can be set as an environment variable.
-        // Refer http://getgauge.io/documentation/user/current/managing_environments/README.html
-        public static WebDriver getDriver() {
+    // Private constructor to prevent instantiation
+    private DriverFactory() {}
 
+    public static WebDriver getDriver() {
+        if (driver == null) {
             String browser = System.getenv("BROWSER");
-            browser = (browser == null) ? "CHROME": browser;
+            browser = (browser == null) ? "CHROME" : browser;
 
-            switch (browser) {
+            switch (browser.toUpperCase()) {
                 case "IE":
                     WebDriverManager.iedriver().setup();
-                    return new InternetExplorerDriver();
+                    driver = new InternetExplorerDriver();
+                    break;
                 case "FIREFOX":
                     WebDriverManager.firefoxdriver().setup();
-                    return new FirefoxDriver();
+                    driver = new FirefoxDriver();
+                    break;
                 case "CHROME":
                 default:
                     WebDriverManager.chromedriver().setup();
-
                     ChromeOptions options = new ChromeOptions();
-                    if ("Y".equalsIgnoreCase(System.getenv("HEADLESS"))) {
-                        options.addArguments("--headless");
-                        options.addArguments("--disable-gpu");
-                    }
-
-                    return new ChromeDriver(options);
+                    // Uncomment if you need headless mode based on environment variable
+                    // if ("Y".equalsIgnoreCase(System.getenv("HEADLESS"))) {
+                    //     options.addArguments("--headless");
+                    //     options.addArguments("--disable-gpu");
+                    // }
+                    driver = new ChromeDriver(options);
+                    break;
             }
         }
+        return driver;
     }
+
+    // Method to close the driver instance
+    public static void closeDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null; // Reset the driver instance
+        }
+    }
+}
