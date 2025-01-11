@@ -17,7 +17,6 @@ public class BaseActions {
 
     protected WebDriver driver;
 
-    // Constructor to initialize WebDriver
     public BaseActions(WebDriver driver) throws IOException {
         this.driver = driver;
     }
@@ -33,7 +32,6 @@ public class BaseActions {
         }
     }
 
-    // Write text into an input field if it is present and visible
     public void write(By locator, String text) {
         if (isElementPresent(locator)) {
             WebElement element = driver.findElement(locator);
@@ -44,33 +42,6 @@ public class BaseActions {
         }
     }
 
-    // Hover over an element
-    public void hoverOver(By locator) {
-        if (isElementPresent(locator)) {
-            WebElement element = driver.findElement(locator);
-            Actions actions = new Actions(driver);
-            actions.moveToElement(element).perform();
-        } else {
-            throw new RuntimeException("Element not found or not visible: " + locator);
-        }
-    }
-
-    // Check if an element is enabled
-    public boolean isElementEnabled(By locator) {
-        if (isElementPresent(locator)) {
-            return driver.findElement(locator).isEnabled();
-        }
-        return false; // Return false if element is not present
-    }
-
-    // Check if an element is selected (useful for checkboxes or radio buttons)
-    public boolean isElementSelected(By locator) {
-        if (isElementPresent(locator)) {
-            return driver.findElement(locator).isSelected();
-        }
-        return false; // Return false if element is not present
-    }
-    // Clear the text from an input field if it is present and visible
     public void clear(By locator) {
         if (isElementPresent(locator)) {
             WebElement element = driver.findElement(locator);
@@ -97,9 +68,12 @@ public class BaseActions {
         } catch (NoSuchElementException e) {
         }
     }
-    public String virgulToNokta(String input) {
-        return input.replace(",", ".");
+
+    /////////////////////////////////////////////////////Assertions//////////////////////////
+    public void testCompareDoubles(double actualResult, double expectedResult) {
+        Assert.assertEquals(actualResult,expectedResult,"HATA! sayilar esit degildir");
     }
+
     ////////////////////////////////////////////////////Hesaap Makinesi//////////////////////
     public void clcIslemGir(String islem) { // -,+,*,/ işaretleri girilir
         click(By.xpath("//div[text()='" + islem + "']"));
@@ -107,7 +81,6 @@ public class BaseActions {
     public void clcAcButonuTıkla() {
         click(By.xpath("//div[text()='AC']"));
     }
-
     public void clcSayiGir(String sayi) {
         for (int i = 0; i < sayi.length(); i++) {
             char digit = sayi.charAt(i);
@@ -118,18 +91,17 @@ public class BaseActions {
             }
         }
     }
-
     public void clcHesapla(String sayi1, String islem, String sayi2) {
         clcSayiGir(sayi1);
         clcIslemGir(islem);
         clcSayiGir(sayi2);
         click(By.xpath("//div[text()='=']"));
     }
-    public Double clcGetSonuc(){
-        return (Double.parseDouble(virgulToNokta(driver.findElement(calculatorPage.getLabelBox()).getText().split(" ")[1])));
+    public String clcGetSonuc(){
+        return (virgulToNokta(driver.findElement(calculatorPage.getLabelBox()).getText().split(" ")[1]));
     }
-    //////////////////////////////////////////Assertions////////////
-    public void testCompareDoubles(double actualResult, double expectedResult) {
-        Assert.assertEquals(actualResult,expectedResult,"HATA! sayilar esit degildir");
+    public String virgulToNokta(String input) {
+        return input.replace(",", ".");
     }
+
 }

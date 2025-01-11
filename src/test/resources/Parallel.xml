@@ -1,7 +1,9 @@
 
 
 <suite name="Cucumber Parallel Suite" verbose="1" >
-    <test name="Parallel:AutomationProject">
+    <test name="Hesap Makinesi Modul Testi">
+        <parameter name="catchylabsUsername" value="erdinckrts"/>
+        <parameter name="catchylabsPassword" value="123qwe123qweC."/>
         <classes>
             <class name="testRunners.runner">
             </class>

@@ -6,8 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CalculatorPage;
 import pages.LoginPage;
@@ -18,7 +16,6 @@ import util.ElementHelper;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.time.Duration;
-import org.openqa.selenium.By;
 
 
 public class HesapMakinesiModuluStepDefinitions {
@@ -30,10 +27,9 @@ public class HesapMakinesiModuluStepDefinitions {
     CalculatorPage calculatorPage =new CalculatorPage(driver);
     ClcActions clcActions =new ClcActions(driver);
     BaseActions baseActions = new BaseActions(driver);
-    String doubleFaizOran;
+    String faizOran;
     String anaPara;
-    Double clcSonuc;
-
+    String clcSonuc;
 
 
     public HesapMakinesiModuluStepDefinitions(AndroidDriver driver) throws IOException, URISyntaxException {
@@ -48,41 +44,41 @@ public class HesapMakinesiModuluStepDefinitions {
         baseActions.write(loginPage.getLoginTextBox(),"erdinckrts");
         baseActions.write(loginPage.getPasswordTextBox(),"123qwe123qweC.");
         baseActions.click(loginPage.getLoginButton());
-        System.out.println("Login Btn : "+loginPage.getLoginButton());
         baseActions.click(stagePage.getOpenCalculatorButton());
     }
 
 
     @Given("Yatirim tutari {double} ve faiz oranı %{double} olarak verilir")
     public void yatirimTutariVeFaizOranıOlarakVerilir(double anaPara, double oran) {
-        this.doubleFaizOran=Double.toString(oran/(double) 100);
+        this.faizOran=Double.toString(oran/(double) 100);
         this.anaPara=Double.toString(anaPara);
     }
 
-    @And("Faiz orani {int}(yil) ile carpilir")
+
+    @And("Faiz orani yil\\({double}) ile carpilir")
     public void faizOraniYilIleCarpilir(double yil) {
-        baseActions.clcHesapla(doubleFaizOran,"*", String.valueOf(yil));
+        baseActions.clcHesapla(faizOran,"*", Double.toString(yil));
         this.clcSonuc=baseActions.clcGetSonuc();
     }
-
-    @Then("Sonucun {double} x {double} geldiği gorulur")
-    public void sonucunCarpimGeldigiGorulur(double sayi1, double sayi2) {
-        System.out.println("carpim okey");
-        //baseActions.testCompareDoubles(clcSonuc,(sayi1*sayi2));
-    }
-
 
     @And("Sonuc bir ile toplanir")
     public void sonucIleToplanir() {
         baseActions.clcAcButonuTıkla();
-        baseActions.clcHesapla(Double.toString(clcSonuc),"+","1");
+        baseActions.clcHesapla(clcSonuc,"+","1");
         this.clcSonuc=baseActions.clcGetSonuc();
     }
 
-    @Then("Sonucun {double} + {double} geldigi gorulur")
-    public void sonucunToplamGeldigiGorulur(double sayi1, double sayi2) {
-        baseActions.testCompareDoubles(clcSonuc,(sayi1+sayi2));
-
+    @Then("Sonucun {double} geldigi gorulur")
+    public void sonucunToplamGeldigiGorulur(double sayi1) {
+        baseActions.testCompareDoubles(Double.parseDouble(clcSonuc),sayi1);
     }
+
+    @And("Sonuc yatirim tutari ile carpilir")
+    public void sonucYatirimTutariIleCarpilir() {
+        baseActions.clcAcButonuTıkla();
+        baseActions.clcHesapla(anaPara,"*",clcSonuc);
+    }
+
+
 }
 //taskkill /F /IM chromedriver.exe /T
