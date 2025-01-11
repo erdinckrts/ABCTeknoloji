@@ -7,6 +7,7 @@ import io.cucumber.java.BeforeStep;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
 
 
 public class Hooks {
@@ -16,18 +17,18 @@ public class Hooks {
 
         // Initialize a webDriver instance of required browser
         // Since this does not have a significance in the application's business domain, the BeforeSuite hook is used to instantiate the webDriver
+
+
         @BeforeAll
-        public static void before_or_after_all(){System.out.println("beforeall calisti");}
-        @Before
-        public void initializeDriver(){
+        public static void initializeDriver(){
             System.out.println("before calisti");
             //WebDriverManager.chromedriver().setup();
             //webDriver =new ChromeDriver();
             webDriver = DriverFactory.getDriver();
             //webDriver.manage().window().maximize();
             webDriver.get("https://catchylabs-webclient.testinium.com/");
-
         }
+
 
         @BeforeStep
         public void BeforeStep(){System.out.println("beforestep calisti");}
