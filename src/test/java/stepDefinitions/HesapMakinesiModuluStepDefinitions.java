@@ -54,8 +54,7 @@ public class HesapMakinesiModuluStepDefinitions {
         baseActions.click(StagePage.getOpenCalculatorButton());
     }
 
-
-    @Given("Yatirim tutari {double} ve faiz orani yuzde {int} olarak verilir")
+    @Given("Yatirim tutari {double} ve faiz orani yuzde {double} olarak verilir")
     public void yatirimTutariVeFaizOraniYuzdeOlarakVerilir(double anaPara, double oran) {
         this.faizOran=Double.toString(oran/(double) 100);
         this.anaPara=calcActions.doubleToString(anaPara);
