@@ -62,6 +62,7 @@ public class BaseActions {
             return false; // Return false if element is not found
         }
     }
+
     private void elementWaiter(By locator) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
@@ -70,6 +71,14 @@ public class BaseActions {
         } catch (NoSuchElementException e) {
         }
     }
+    public void clickElementIfPresent(By locator) {
+        if (isElementPresent(locator)) {  // Eğer eleman varsa
+            click(locator);
+        } else {
+            // Eğer eleman yoksa, hata verilmez ve işlem devam eder
+        }
+    }
+
 
     /////////////////////////////////////////////////////Assertions//////////////////////////
     public void testCompareDoubles(double actualResult, double expectedResult) {

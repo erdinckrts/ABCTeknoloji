@@ -14,5 +14,8 @@ public class StagePage extends BasePage {
     public static By getOpenCalculatorButton() {
         return locatorFactory.getLocator("stagePage", "openCalculatorButton");
     }
+    public static By getLogoutButton() {
+        return locatorFactory.getLocator("stagePage", "logoutButton");
+    }
 
 }

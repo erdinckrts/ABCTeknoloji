@@ -17,4 +17,19 @@ import org.testng.annotations.*;
 )
 
 public class runner extends AbstractTestNGCucumberTests {
+        // TestNG parametrelerini alıyoruz
+        /*@BeforeClass
+        @Parameters("browser")
+        public void setup(String browser) {
+                // Parametreyi sistem özelliği olarak ayarlıyoruz
+                System.out.println("Parametre Before class : "+browser);
+
+                System.setProperty("browser", browser);
+        }
+
+        @Override
+        @DataProvider(parallel = true)
+        public Object[][] scenarios() {
+                return super.scenarios();
+        }*/
 }

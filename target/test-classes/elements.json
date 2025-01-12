@@ -16,6 +16,10 @@
     ]
   },
   "calculatorPage": {
+    "backButton": [
+      { "type": "xpath","value": "//div[text()='Back']" },
+      { "type": "id","value": "" }
+    ],
     "labelBox": [
       { "type": "xpath","value": "//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/div/div/div/div[1]/div/span" },
       { "type": "id","value": "" }
@@ -89,6 +93,9 @@
   "stagePage": {
     "openCalculatorButton": [
       { "type": "xpath","value": "//div[@tabindex='0']//div[@dir='auto']" }
+    ],
+    "logoutButton": [
+      { "type": "xpath","value": "//div[text()='Logout']" }
     ]
   }
   }

@@ -18,6 +18,10 @@ public class CalculatorPage extends BasePage {
     public static By getLabelBox() {
         return locatorFactory.getLocator("calculatorPage", "labelBox");
     }
+    public static By getBackButton() {
+        return locatorFactory.getLocator("calculatorPage", "backButton");
+    }
+
 
 
 }

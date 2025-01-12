@@ -4,6 +4,7 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -11,47 +12,41 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class DriverFactory {
 
     // Singleton WebDriver instance
-    private static WebDriver driver;
+    //private static WebDriver driver;
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
+    public static WebDriver getterDriver() {
+        return driver.get();
+    }
 
     // Private constructor to prevent instantiation
     private DriverFactory() {}
 
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            String browser = System.getenv("BROWSER");
-            browser = (browser == null) ? "CHROME" : browser;
 
-            switch (browser.toUpperCase()) {
-                case "IE":
-                    WebDriverManager.iedriver().setup();
-                    driver = new InternetExplorerDriver();
+    public static WebDriver getDriver(String browser) {
+        if (driver.get() == null) {
+            switch (browser.toLowerCase()) {
+                case "chrome":
+                    driver.set(new ChromeDriver());
                     break;
-                case "FIREFOX":
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
+                case "edge":
+                    driver.set(new EdgeDriver());
                     break;
-                case "CHROME":
                 default:
-                    WebDriverManager.chromedriver().setup();
-                    ChromeOptions options = new ChromeOptions();
-                    options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-                    // Uncomment if you need headless mode based on environment variable
-                    // if ("Y".equalsIgnoreCase(System.getenv("HEADLESS"))) {
-                    //     options.addArguments("--headless");
-                    //     options.addArguments("--disable-gpu");
-                    // }
-                    driver = new ChromeDriver(options);
-                    break;
+                    throw new IllegalArgumentException("Browser " + browser + " is not supported");
             }
         }
-        return driver;
+
+
+
+        return driver.get();
     }
 
     // Method to close the driver instance
     public static void closeDriver() {
-        if (driver != null) {
-            driver.quit();
-            driver = null; // Reset the driver instance
+        if (driver.get() != null) {
+            driver.get().quit();
+            driver.remove(); // Reset the driver instance
         }
     }
 }

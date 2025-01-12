@@ -46,4 +46,13 @@ public class CalcActions extends BaseActions {
     public String virgulToNokta(String input) {//verilen değerdeki virgülleri noktaya çevirir
         return input.replace(",", ".");
     }
+
+    public String doubleToString(double number) {
+        // Sayının tam sayı olup olmadığını kontrol et
+        if (number == (long) number) {
+            return String.valueOf((int) number);  // Tam sayı ise, integer'a dönüştür
+        }
+        return Double.toString(number);  // Eğer tam sayı değilse, double olarak döndür
+    }
+
 }

@@ -17,7 +17,7 @@ import java.util.Iterator;
 public class LocatorFactory {
 
     private static JsonNode rootNode;
-    static WebDriver driver = DriverFactory.getDriver();
+    static WebDriver driver = DriverFactory.getterDriver();
     static WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
     // Constructor to initialize WebDriver
