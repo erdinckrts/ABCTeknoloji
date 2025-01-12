@@ -1,6 +1,6 @@
 
 
-### Açıklamalar
+# HESAP MAKİNESİ MODÜLÜ
 
 - **Proje Adı**: ABC Teknoloji Otomasyon Projesi
 - **Kullanım**:  Çalıştırmadan önce "config.properties" dosyasına *catchylabsPassword* ve *catchylabsUsername* değerlerini girmeniz gerekmektedir.
