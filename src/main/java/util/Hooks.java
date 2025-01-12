@@ -42,7 +42,7 @@ public class Hooks {
             closeButton.click();*/
             if (webDriver != null) {
                 webDriver.quit();  // Driver oturumunu sonlandırıyoruz
-                System.out.println("Driver kapatıldı.");
+                System.out.println("Driver kapatildi.");
             }
         }
 

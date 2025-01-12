@@ -13,7 +13,7 @@ Feature: Hesap Makinesi Modul Testleri
 
   @SENARYO02
   Scenario Outline: SENARYO02 Aylik gelir gider degerleri ile tasarruf miktari hesaplama
-    Given Open Calculator butonuna tiklanir
+    Given Calculator Sayfasi Acilir
     Given Kullanici <gelir> TL gelir ve <gider> TL gider girisi yapar
     And Gelir degerinden gider degeri cikarilir
     Then Sonuc <tasarruf> degerine esit olmalidir
@@ -31,7 +31,7 @@ Feature: Hesap Makinesi Modul Testleri
 
   @SENARYO03
   Scenario: SENARYO04 %3 Faiz Orani Ile 500 TL'lik Yatirimin 0.5 Yil Sonundaki Degerini Hesaplama
-    Given Open Calculator butonuna tiklanir
+    Given Calculator Sayfasi Acilir
     Given Yatirim tutari 500 ve faiz orani yuzde 3 olarak verilir
     And Faiz orani yil(0.5) ile carpilir
     Then Sonucun 0.015 TL geldigi gorulur
