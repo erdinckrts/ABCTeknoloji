@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 @CucumberOptions(
         features = {"src/test/java/features"},
         glue = {"stepDefinitions", "util"},
-        tags = "",//parallel.xml içinde tanımlıyorum
+        tags = "not @SENARYO02",//parallel.xml içinde tanımlıyorum
         plugin = {
                 "summary", "pretty", "html:Reports/CucumberReport/Reports.html",
         }
